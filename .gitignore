@@ -36,4 +36,13 @@ graphify-out/
 # Video & audio raw captures
 *.webm
 *.wav
-docs/submission/*-narrated.mp4
+
+# Submission documents & presentations (kept local, kept off GitHub)
+docs/submission/
+docs/presentation/
+docs/PROJECT_SUBMISSION_REPORT.md
+deep-research-report.md
+problem statement.txt
+scripts/capture-screenshots.ts
+scripts/record-demo-video.ts
+scripts/generate-narration.ps1

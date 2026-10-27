@@ -32,3 +32,6 @@ blob-report/
 
 # Generated graph analysis
 graphify-out/
+
+# Video raw captures
+*.webm

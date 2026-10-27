@@ -42,11 +42,12 @@ This checklist maps each field of the **OSFIC 2026 Solution Submission Portal** 
 ---
 
 ### Form Field 5: **Video URL**
-* **Guide & Script**: [`docs/submission/VIDEO_SUBMISSION_GUIDE.md`](file:///e:/OSFIC/docs/submission/VIDEO_SUBMISSION_GUIDE.md)
-* **Instructions**:
-  1. Record a quick 90-second screen capture following the script in [`VIDEO_SUBMISSION_GUIDE.md`](file:///e:/OSFIC/docs/submission/VIDEO_SUBMISSION_GUIDE.md).
-  2. Upload to **YouTube** (set visibility to *Unlisted*) or **Google Drive** (set link sharing to *"Anyone with the link can view"*).
-  3. Paste the URL into the form.
+* **Recorded Video Available**: [`docs/submission/drishti-demo-90s.mp4`](file:///e:/OSFIC/docs/submission/drishti-demo-90s.mp4) *(6.76 MB, 1080p high-definition with floating narration subtitles)*
+* **Raw WebM Version**: [`docs/submission/drishti-demo-90s.webm`](file:///e:/OSFIC/docs/submission/drishti-demo-90s.webm)
+* **Instructions to get URL for the form**:
+  1. Upload `docs/submission/drishti-demo-90s.mp4` to **YouTube** (set visibility to *Unlisted*) or **Google Drive** (set Share Permissions to *"Anyone with the link can view"*).
+  2. Paste the shared link into the **Video URL** field in the form.
+  *(Alternatively, link directly to the GitHub video file once pushed).*
 
 ---
 

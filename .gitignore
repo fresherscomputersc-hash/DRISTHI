@@ -29,3 +29,6 @@ blob-report/
 
 # Local run logs
 *.log
+
+# Generated graph analysis
+graphify-out/

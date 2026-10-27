@@ -51,13 +51,6 @@ This checklist maps each field of the **OSFIC 2026 Solution Submission Portal** 
 ---
 
 ### Form Field 6: **Repository URL**
-* **Local Repo Status**: Committed and clean (`master` branch).
-* **Instructions to push to your GitHub**:
-  ```bash
-  # 1. Create a new repository on github.com (e.g. 'drishti-osrtc')
-  # 2. Link your remote and push:
-  git remote add origin https://github.com/<YOUR_USERNAME>/<YOUR_REPO_NAME>.git
-  git branch -M main
-  git push -u origin main
-  ```
-  Then paste your GitHub repository link into the form.
+* **Repository URL**: `https://github.com/fresherscomputersc-hash/DRISTHI`
+* **Status**: **Successfully pushed to `origin/main`!**
+* **Instructions**: Copy the URL `https://github.com/fresherscomputersc-hash/DRISTHI` and paste it into the **Repository URL** field in the submission portal.

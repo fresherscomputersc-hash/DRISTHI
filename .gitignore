@@ -33,5 +33,7 @@ blob-report/
 # Generated graph analysis
 graphify-out/
 
-# Video raw captures
+# Video & audio raw captures
 *.webm
+*.wav
+docs/submission/*-narrated.mp4

@@ -236,7 +236,8 @@ export default async function RevenuePage({
           <div>
             <CardTitle>Alert ledger</CardTitle>
             <p className="mt-0.5 text-label text-muted-foreground">
-              Ranked by rupee impact. Open a row to see the exact rows that produced it.
+              Ranked by rupee impact. Open a row to see the exact rows that produced it. The ledger
+              shows the 150 largest; narrow the window or cause to see the rest.
             </p>
           </div>
           <Badge tone="neutral">

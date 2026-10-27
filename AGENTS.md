@@ -71,14 +71,46 @@ Drishti is a real-time operations-intelligence console for the Odisha State Road
 
 ## Conventions
 
-Conventions not yet established. Will populate as patterns emerge during development.
+**Data access**
+- Every page is a server component and calls a query function in `src/server/queries/*`. No client-side fetching, no API routes for reads.
+- Never join `tickets` into an aggregate that also sums `vehicles.capacity` — the join multiplies trip rows. Aggregate sales and seats in separate queries and stitch them in TypeScript.
+- Analytics that are expensive and immutable (detections, demand forecasts) are memoised in a module-level `Map`/variable. Read mutable state (cases) separately so it never serves a stale result.
+- "Today" is `readMeta("window_end")` via `dbDateRange`, never `new Date()`.
+
+**Analytics**
+- Engines live in `src/core/*` and are pure: no I/O, no React. They are covered by Vitest.
+- Every detection carries `kind`, `confidence`, `reasons[]` (numbered trace), and `rupeesImpact`. A new rule without a rule trace is incomplete.
+
+**UI**
+- Currency via `inr`/`inrExact`, counts via `num`, percentages via `pct`, dates via `fmtDate` — never `toLocaleString` inline.
+- Amounts are tabular (`tabular` class); badges carry meaning (kind, severity), not only colour.
+- The synthetic-data badge is present on every page; never imply live OSRTC data.
+
+**Seeding**
+- `src/db/seed/generate.ts` is deterministic from `SEED`; any change to it requires `npm run seed` and a refreshed `npm run verify` scorecard in README/DEMO.
+- Seed modules use relative imports (`tsx`), app code uses the `@/` alias.
 <!-- GSD:conventions-end -->
 
 <!-- GSD:architecture-start source:ARCHITECTURE.md -->
 
 ## Architecture
 
-Architecture not yet mapped. Follow existing patterns found in the codebase.
+```
+src/core/        pure engines: reconcile, forecast, risk, recommend, scorecard (Vitest)
+src/db/          Drizzle schema, better-sqlite3 client, deterministic seed generator
+src/server/      queries/*.ts read SQL; actions/cases.ts is the only server action
+src/app/         routes: / (Command Center), /revenue, /demand, /fleet, /data-quality
+src/components/  shell (sidebar, topbar, persona), ui primitives, charts, drawer, forms
+scripts/         verify-detection.ts — detection scorecard vs injected ground truth
+e2e/             Playwright demo-path tests
+```
+
+Request path: page (server component) → `src/server/queries/*` → SQLite → `src/core/*` for classification
+or forecasting → JSX. The browser never sees SQL, and the DB file never leaves the server.
+
+`trip_finance` is pre-aggregated during seeding (one row per trip: ticket rows, expected, remitted,
+missing remittance, fare gap) so reconciliation scans 123k indexed rows instead of aggregating 540k
+detail rows at request time. Cases live in their own table and are joined to detections only for display.
 <!-- GSD:architecture-end -->
 
 <!-- GSD:skills-start source:skills/ -->

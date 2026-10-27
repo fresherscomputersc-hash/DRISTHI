@@ -6,12 +6,12 @@ Six phases take Drishti from an empty repository to a demonstrable operations-in
 
 ## Phases
 
-- [ ] **Phase 1: Foundation & Design System** - Next.js scaffold, tokens, app shell, SQLite trip model, deterministic seeded generator
-- [ ] **Phase 2: Analytics Core & Ground Truth** - Reconciliation, classification, forecasting, risk scoring, tested; detection scorecard
-- [ ] **Phase 3: Command Center** - Executive situational view, rupee-ranked alert feed, data freshness
-- [ ] **Phase 4: Revenue Integrity** - Deep leakage workflow with evidence panels and case lifecycle
-- [ ] **Phase 5: Demand & Fleet** - Forecast board, capacity gaps, utilization, maintenance risk, redeployment
-- [ ] **Phase 6: Hardening & Demo** - CSV import, data quality, a11y, Playwright, README + demo script
+- [x] **Phase 1: Foundation & Design System** - Next.js scaffold, tokens, app shell, SQLite trip model, deterministic seeded generator
+- [x] **Phase 2: Analytics Core & Ground Truth** - Reconciliation, classification, forecasting, risk scoring, tested; detection scorecard
+- [x] **Phase 3: Command Center** - Executive situational view, rupee-ranked alert feed, data freshness
+- [x] **Phase 4: Revenue Integrity** - Deep leakage workflow with evidence panels and case lifecycle
+- [x] **Phase 5: Demand & Fleet** - Forecast board, capacity gaps, utilization, maintenance risk, redeployment
+- [x] **Phase 6: Hardening & Demo** - Data quality, error states, Playwright, README + demo script (CSV import deferred)
 
 ## Phase Details
 
@@ -23,15 +23,17 @@ Six phases take Drishti from an empty repository to a demonstrable operations-in
 **Success Criteria** (what must be TRUE):
   1. `npm run dev` starts the app on a clean machine with no keys and no network
   2. `npm run seed` reproducibly builds the SQLite dataset; running it twice yields identical counts
-  3. Dataset contains 1,999 vehicles, ~180 routes, 90 days of trips, and ~240 labeled anomalies
+  3. Dataset contains 1,999 vehicles, 192 routes, 90 days of trips, and 2,070 labeled anomalies (2,040 revenue)
   4. App shell renders the four-persona navigation with tokens applied and no layout shift
   5. A `/api/health` style check confirms DB connectivity and seed version
+
+**Delivered:** seed version and row counts are surfaced on `/data-quality` rather than a dedicated endpoint.
 **Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Next.js scaffold, Tailwind + shadcn setup, design tokens, app shell and persona switcher
-- [ ] 01-02: Drizzle schema, SQLite client, indexes, and seed versioning
-- [ ] 01-03: Deterministic generator: routes, depots, vehicles, trips, tickets, collections, telemetry, maintenance, injected anomalies
+- [x] 01-01: Next.js scaffold, Tailwind + shadcn setup, design tokens, app shell and persona switcher
+- [x] 01-02: Drizzle schema, SQLite client, indexes, and seed versioning
+- [x] 01-03: Deterministic generator: routes, depots, vehicles, trips, tickets, collections, telemetry, maintenance, injected anomalies
 
 ### Phase 2: Analytics Core & Ground Truth
 **Goal**: Pure, tested analytics that turn the trip model into decisions — and prove their own accuracy.
@@ -47,9 +49,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Reconciliation + anomaly classification engine with reason codes
-- [ ] 02-02: Holt-Winters demand forecast, backtest harness, capacity-gap detection
-- [ ] 02-03: Utilization, breakdown-risk scoring, recommendation engine, ground-truth scorecard
+- [x] 02-01: Reconciliation + anomaly classification engine with reason codes
+- [x] 02-02: Holt-Winters demand forecast, backtest harness, capacity-gap detection
+- [x] 02-03: Utilization, breakdown-risk scoring, recommendation engine, ground-truth scorecard
 
 ### Phase 3: Command Center
 **Goal**: A single screen that gives OSRTC leadership the ten-second read, and routes them to the evidence.
@@ -65,8 +67,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: KPI computation queries + card components with provenance chips
-- [ ] 03-02: Rupee-ranked alert feed, freshness strip, persona-aware defaults
+- [x] 03-01: KPI computation queries + card components with provenance chips
+- [x] 03-02: Rupee-ranked alert feed, freshness strip, persona-aware defaults
 
 ### Phase 4: Revenue Integrity
 **Goal**: The provable centrepiece — detect leakage, explain it, and close it.
@@ -82,9 +84,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Revenue ledger, filters, variance table, rupee formatting
-- [ ] 04-02: Evidence drawer with provenance chain and rule trace rendering
-- [ ] 04-03: Case workflow (server actions), recoverable-₹ rollup, scorecard panel
+- [x] 04-01: Revenue ledger, filters, variance table, rupee formatting
+- [x] 04-02: Evidence drawer with provenance chain and rule trace rendering
+- [x] 04-03: Case workflow (server actions), recoverable-₹ rollup, scorecard panel
 
 ### Phase 5: Demand & Fleet
 **Goal**: Deliver the remaining three PS verbs as decisions, not charts.
@@ -100,9 +102,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: Demand board: forecast chart, MAPE panel, capacity-gap list
-- [ ] 05-02: Fleet utilization views and vehicle detail
-- [ ] 05-03: Maintenance risk queue and redeployment recommendations
+- [x] 05-01: Demand board: forecast chart, MAPE panel, capacity-gap list
+- [x] 05-02: Fleet utilization views and vehicle detail
+- [x] 05-03: Maintenance risk queue and redeployment recommendations
 
 ### Phase 6: Hardening & Demo
 **Goal**: Make it survive a judging laptop, a projector, and a skeptical domain expert.
@@ -118,9 +120,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: CSV import with validation and data quality report
-- [ ] 06-02: Empty/loading/error states, a11y pass, responsive check
-- [ ] 06-03: Playwright demo-path test, README, demo script, graphify refresh
+- [ ] 06-01: CSV import with validation and data quality report — deferred; ingestion contract documented instead
+- [x] 06-02: Empty/loading/error states, a11y pass, responsive check
+- [x] 06-03: Playwright demo-path test, README, demo script, graphify refresh
 
 ## Progress
 
@@ -129,9 +131,9 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Design System | 0/3 | Not started | - |
-| 2. Analytics Core & Ground Truth | 0/3 | Not started | - |
-| 3. Command Center | 0/2 | Not started | - |
-| 4. Revenue Integrity | 0/3 | Not started | - |
-| 5. Demand & Fleet | 0/3 | Not started | - |
-| 6. Hardening & Demo | 0/3 | Not started | - |
+| 1. Foundation & Design System | 3/3 | Complete | 2026-10-26 |
+| 2. Analytics Core & Ground Truth | 3/3 | Complete | 2026-10-26 |
+| 3. Command Center | 2/2 | Complete | 2026-10-26 |
+| 4. Revenue Integrity | 3/3 | Complete | 2026-10-26 |
+| 5. Demand & Fleet | 3/3 | Complete | 2026-10-27 |
+| 6. Hardening & Demo | 2/3 | Complete (06-01 deferred) | 2026-10-27 |

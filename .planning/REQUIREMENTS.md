@@ -7,48 +7,48 @@
 
 ### Foundation
 
-- [ ] **FOUND-01**: App runs offline from a single command with no API keys or external services
-- [ ] **FOUND-02**: Seeded dataset is deterministic, versioned, and OSRTC-plausible (1,999 vehicles, ~180 routes, 90 days, ~135k trips)
-- [ ] **FOUND-03**: Seed injects ~240 labeled anomalies with rupee impact for ground-truth scoring
-- [ ] **FOUND-04**: User can switch between four personas (Executive, Operations, Maintenance, Finance) without authentication
-- [ ] **FOUND-05**: Trip is the atomic data unit; every module reads the same trip model
+- [x] **FOUND-01**: App runs offline from a single command with no API keys or external services
+- [x] **FOUND-02**: Seeded dataset is deterministic, versioned, and OSRTC-plausible (1,999 vehicles, ~180 routes, 90 days, ~135k trips)
+- [x] **FOUND-03**: Seed injects 2,070 labeled anomalies (2,040 revenue) with rupee impact for ground-truth scoring
+- [x] **FOUND-04**: User can switch between four personas (Executive, Operations, Maintenance, Finance) without authentication
+- [x] **FOUND-05**: Trip is the atomic data unit; every module reads the same trip model
 
 ### Command Center
 
-- [ ] **CMD-01**: User sees fleet availability, revenue at risk, demand outlook, and open alerts on one screen
-- [ ] **CMD-02**: Every KPI card opens the module and filter state that produced it
-- [ ] **CMD-03**: Alert feed is ranked by rupee impact, not recency
-- [ ] **CMD-04**: Per-source data freshness is visible with sync age
+- [x] **CMD-01**: User sees fleet availability, revenue at risk, demand outlook, and open alerts on one screen
+- [x] **CMD-02**: Every KPI card opens the module and filter state that produced it
+- [x] **CMD-03**: Alert feed is ranked by rupee impact, not recency
+- [x] **CMD-04**: Per-source data freshness is visible with sync age
 
 ### Revenue Integrity
 
-- [ ] **REV-01**: Finance user can see trip-level reconciliation of ticket sales vs cash + online collections
-- [ ] **REV-02**: Each mismatch is classified as sync failure, under-collection, duplicate sale, fare mismatch, or unrecorded trip
-- [ ] **REV-03**: Each mismatch has a confidence score and reason codes
-- [ ] **REV-04**: Finance user can open an evidence panel showing contributing rows and the rule that fired
-- [ ] **REV-05**: Finance user can acknowledge, assign, and resolve a case with a note
-- [ ] **REV-06**: User sees total recoverable ₹ and detection precision/recall against ground truth
+- [x] **REV-01**: Finance user can see trip-level reconciliation of ticket sales vs cash + online collections
+- [x] **REV-02**: Each mismatch is classified as sync failure, under-collection, duplicate sale, fare mismatch, or unrecorded trip
+- [x] **REV-03**: Each mismatch has a confidence score and reason codes
+- [x] **REV-04**: Finance user can open an evidence panel showing contributing rows and the rule that fired
+- [x] **REV-05**: Finance user can acknowledge, assign, and resolve a case with a note
+- [x] **REV-06**: User sees total recoverable ₹ and detection precision/recall against ground truth
 
 ### Demand Intelligence
 
-- [ ] **DEM-01**: Operations user can see boardings forecast by route, day, and hour for the next 7 days
-- [ ] **DEM-02**: Every forecast shows a confidence band and backtested MAPE
-- [ ] **DEM-03**: System flags capacity gaps where forecast load factor >100% or <40%
-- [ ] **DEM-04**: System recommends adding or trimming trips with expected daily rupee impact
+- [x] **DEM-01**: Operations user can see boardings forecast by route, day, and hour for the next 7 days
+- [x] **DEM-02**: Every forecast shows a confidence band and backtested MAPE
+- [x] **DEM-03**: System flags capacity gaps where forecast load factor >100% or <40%
+- [x] **DEM-04**: System recommends adding or trimming trips with expected daily rupee impact
 
 ### Fleet & Maintenance
 
-- [ ] **FLT-01**: User can see utilization per vehicle and route (load factor, dead-km ratio, idle time)
-- [ ] **FLT-02**: Maintenance user can see a 0–100 breakdown-risk score per vehicle with top contributing factors
-- [ ] **FLT-03**: Service-due queue is prioritized by risk and km since last service
-- [ ] **FLT-04**: System suggests redeployments (move vehicle between routes/depots) grounded in forecast gaps
+- [x] **FLT-01**: User can see utilization per vehicle and route (load factor, dead-km ratio, idle time)
+- [x] **FLT-02**: Maintenance user can see a 0–100 breakdown-risk score per vehicle with top contributing factors
+- [x] **FLT-03**: Service-due queue is prioritized by risk and km since last service
+- [x] **FLT-04**: System suggests redeployments (move vehicle between routes/depots) grounded in forecast gaps
 
 ### Explainability & Data
 
-- [ ] **EXP-01**: Every alert, KPI, and forecast exposes source rows on demand
-- [ ] **EXP-02**: Every model output states its method, inputs, and confidence
-- [ ] **DATA-01**: Analyst can import CSV extracts for trips, tickets, and maintenance with validation errors surfaced
-- [ ] **DATA-02**: Data quality report shows missing telemetry, unlinked tickets, stale syncs, and orphan records
+- [x] **EXP-01**: Every alert, KPI, and forecast exposes source rows on demand
+- [x] **EXP-02**: Every model output states its method, inputs, and confidence
+- [ ] **DATA-01**: Analyst can import CSV extracts for trips, tickets, and maintenance with validation errors surfaced — *deferred; the ingestion contract is documented on the Data Quality page*
+- [x] **DATA-02**: Data quality report shows missing telemetry, unlinked tickets, stale syncs, and orphan records
 
 ## v2 Requirements
 
@@ -89,33 +89,33 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 | Pending |
-| FOUND-02 | Phase 1 | Pending |
-| FOUND-03 | Phase 1 | Pending |
-| FOUND-04 | Phase 1 | Pending |
-| FOUND-05 | Phase 1 | Pending |
-| CMD-01 | Phase 3 | Pending |
-| CMD-02 | Phase 3 | Pending |
-| CMD-03 | Phase 3 | Pending |
-| CMD-04 | Phase 3 | Pending |
-| REV-01 | Phase 4 | Pending |
-| REV-02 | Phase 4 | Pending |
-| REV-03 | Phase 4 | Pending |
-| REV-04 | Phase 4 | Pending |
-| REV-05 | Phase 4 | Pending |
-| REV-06 | Phase 4 | Pending |
-| DEM-01 | Phase 5 | Pending |
-| DEM-02 | Phase 5 | Pending |
-| DEM-03 | Phase 5 | Pending |
-| DEM-04 | Phase 5 | Pending |
-| FLT-01 | Phase 5 | Pending |
-| FLT-02 | Phase 5 | Pending |
-| FLT-03 | Phase 5 | Pending |
-| FLT-04 | Phase 5 | Pending |
-| EXP-01 | Phase 2 | Pending |
-| EXP-02 | Phase 2 | Pending |
-| DATA-01 | Phase 6 | Pending |
-| DATA-02 | Phase 6 | Pending |
+| FOUND-01 | Phase 1 | Done |
+| FOUND-02 | Phase 1 | Done |
+| FOUND-03 | Phase 1 | Done |
+| FOUND-04 | Phase 1 | Done |
+| FOUND-05 | Phase 1 | Done |
+| CMD-01 | Phase 3 | Done |
+| CMD-02 | Phase 3 | Done |
+| CMD-03 | Phase 3 | Done |
+| CMD-04 | Phase 3 | Done |
+| REV-01 | Phase 4 | Done |
+| REV-02 | Phase 4 | Done |
+| REV-03 | Phase 4 | Done |
+| REV-04 | Phase 4 | Done |
+| REV-05 | Phase 4 | Done |
+| REV-06 | Phase 4 | Done |
+| DEM-01 | Phase 5 | Done |
+| DEM-02 | Phase 5 | Done |
+| DEM-03 | Phase 5 | Done |
+| DEM-04 | Phase 5 | Done |
+| FLT-01 | Phase 5 | Done |
+| FLT-02 | Phase 5 | Done |
+| FLT-03 | Phase 5 | Done |
+| FLT-04 | Phase 5 | Done |
+| EXP-01 | Phase 2 | Done |
+| EXP-02 | Phase 2 | Done |
+| DATA-01 | Phase 6 | Deferred |
+| DATA-02 | Phase 6 | Done |
 
 **Coverage:**
 - v1 requirements: 27 total
@@ -124,4 +124,4 @@
 
 ---
 *Requirements defined: 2026-10-26*
-*Last updated: 2026-10-26 after initial definition*
+*Last updated: 2026-10-27 — 26 of 27 v1 requirements delivered; DATA-01 (CSV import) deferred*
